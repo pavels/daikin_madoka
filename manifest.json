@@ -4,5 +4,6 @@
   "config_flow": true,
   "documentation": "https://www.home-assistant.io/integrations/daikin",
   "requirements": ["pymadoka==0.2.4"],
-  "codeowners": ["@mduran80"]
+  "codeowners": ["@mduran80"],
+  "version": "0.9.9"
 }
