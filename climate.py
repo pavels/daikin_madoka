@@ -181,12 +181,13 @@ class DaikinMadokaClimate(ClimateEntity):
         """Set new target temperature."""
         try:
             new_cooling_set_point = self.controller.set_point.status.cooling_set_point
-            new_heating_set_point = self.controller.set_point.status.cooling_set_point
+            new_heating_set_point = self.controller.set_point.status.heating_set_point
             if (
                 self.controller.operation_mode.status.operation_mode
                 != OperationModeEnum.HEAT
             ):
-                new_cooling_set_point = round(kwargs.get(ATTR_TEMPERATURE))
+                # new_cooling_set_point = round(kwargs.get(ATTR_TEMPERATURE))
+                new_heating_set_point = round(kwargs.get(ATTR_TEMPERATURE))
             if (
                 self.controller.operation_mode.status.operation_mode
                 != OperationModeEnum.COOL
