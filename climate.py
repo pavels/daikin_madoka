@@ -253,7 +253,7 @@ class DaikinMadokaClimate(ClimateEntity):
     async def async_set_hvac_mode(self, hvac_mode):
         """Set HVAC mode."""
         try:
-            if vac_mode != HVAC_MODE_OFF :
+            if hvac_mode != HVAC_MODE_OFF :
                 await self.controller.operation_mode.update(
                     OperationModeStatus(HA_MODE_TO_DAIKIN.get(hvac_mode))
                 )
