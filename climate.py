@@ -261,7 +261,7 @@ class DaikinMadokaClimate(ClimateEntity):
                 PowerStateStatus(hvac_mode != HVAC_MODE_OFF)
             )
 
-            self.async_schedule_update_ha_state()
+            self.async_schedule_update_ha_state(True)
         except ConnectionAbortedError:
             # pylint: disable=logging-not-lazy
             _LOGGER.info(
